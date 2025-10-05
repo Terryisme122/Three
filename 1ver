@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Core Pty Ltd - South Yarra 建筑专家</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* --- 基础样式 (CSS) --- */
+        :root {
+            --primary-color: #31572C; /* 深绿色/墨绿色 - 代表稳定和自然 */
+            --secondary-color: #F0C808; /* 金色/橙色 - 代表专业和活力 */
+            --dark-color: #1A1A1A;
+            --light-color: #F8F8F8;
+            --font-family: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* --- 导航栏 --- */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--dark-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- 英雄区/主页 --- */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-hero-image.jpg') no-repeat center center/cover; /* 替换为您的优质项目图 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px; /* 留出导航栏空间 */
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #E8B907;
+        }
+
+        /* --- 常用布局 --- */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        /* --- 关于我们/核心价值 --- */
+        #about .core-values {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-item {
+            flex: 1;
+            padding: 20px;
+            border-left: 3px solid var(--secondary-color);
+            background: var(--light-color);
+            transition: transform 0.3s;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-item i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .value-item h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        /* --- 服务 --- */
+        #services {
+            background: var(--light-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card h4 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        /* --- 项目案例 --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .project-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(49, 87, 44, 0.85); /* 半透明主色 */
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .project-item:hover .project-info {
+            transform: translateY(0);
+        }
+        
+        /* --- 页脚 --- */
+        footer {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer .footer-links {
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+            color: white;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        footer .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        /* --- 响应式设计 --- */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none; /* 简化移动端，实际项目中会用汉堡菜单 */
+            }
+
+            #about .core-values {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Three Core <span>Pty Ltd</span></div>
+            <div class="nav-links">
+                <a href="#home">首页</a>
+                <a href="#about">关于我们</a>
+                <a href="#services">服务</a>
+                <a href="#projects">项目案例</a>
+                <a href="#contact" class="btn-primary" style="padding: 8px 15px;">免费咨询</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero-content">
+            <h1>墨尔本 South Yarra 卓越建筑伙伴</h1>
+            <p>我们致力于在住宅和商业领域提供**质量、诚信、创新**的三核建筑服务。</p>
+            <a href="#projects" class="btn-primary">查看我们的项目</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="heading">关于 Three Core Pty Ltd</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+            Three Core Pty Ltd 植根于 South Yarra，拥有维州注册建筑资质。我们相信成功的建筑项目始于稳固的基石。我们的名字代表了我们对客户的承诺：
+        </p>
+
+        <div class="core-values">
+            <div class="value-item">
+                <i class="fas fa-hammer"></i>
+                <h3>质量 (Quality)</h3>
+                <p>我们只使用行业顶级材料，并确保每一个细节都符合澳大利亚的最高标准。</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-handshake"></i>
+                <h3>诚信 (Integrity)</h3>
+                <p>从报价到完工，全程透明沟通，确保项目按时按预算交付，绝无隐性费用。</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-lightbulb"></i>
+                <h3>创新 (Innovation)</h3>
+                <p>我们拥抱先进的施工技术和可持续设计，为您的空间带来持久的价值。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="heading">我们的建筑服务</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-home"></i>
+                <h4>住宅新建 (New Builds)</h4>
+                <p>从概念设计到交钥匙，为您打造量身定制的豪华住宅或现代联排别墅。</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-city"></i>
+                <h4>商业项目 (Commercial)</h4>
+                <p>办公室改造、零售店装修和商业空间新建，高效满足您的业务需求。</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-roller"></i>
+                <h4>高端翻新与扩建 (Renovations)</h4>
+                <p>精湛的厨房、浴室或全屋翻新，提升现有房产的居住舒适度和市场价值。</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tasks"></i>
+                <h4>项目管理 (Project Management)</h4>
+                <p>全面的施工管理，协调分包商、监管进度，确保项目流程无缝衔接。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="heading">精选项目案例</h2>
+        <div class="projects-grid">
+            <div class="project-item">
+                <img src="project1.jpg" alt="Toorak 豪华住宅新建"> <div class="project-info">
+                    <h5>Toorak 豪华住宅新建</h5>
+                    <p>服务范围: 全程设计与施工管理</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="project2.jpg" alt="South Yarra 办公室改造"> <div class="project-info">
+                    <h5>South Yarra 办公室改造</h5>
+                    <p>服务范围: 内部结构调整和高端装修</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="project3.jpg" alt="Brighton 海边别墅扩建"> <div class="project-info">
+                    <h5>Brighton 别墅扩建</h5>
+                    <p>服务范围: 增加二楼和景观工程</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+             <a href="#" class="btn-primary">查看更多案例</a>
+        </div>
+    </section>
+    
+    <section id="contact" style="background: var(--primary-color); color: white;">
+        <h2 class="heading" style="color: white;">开始您的建筑项目</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+            无论您是在 South Yarra 规划一次高端翻新，还是在墨尔本寻找一个值得信赖的合作伙伴来建设您的新家，Three Core 都能为您提供专业的咨询和解决方案。
+        </p>
+        <div style="text-align: center;">
+            <a href="mailto:info@threecore.com.au" class="btn-primary">发送邮件咨询</a>
+            <p style="margin-top: 20px;">或致电我们: (03) XXXX XXXX</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#home">首页</a> |
+            <a href="#services">服务</a> |
+            <a href="#projects">项目案例</a> |
+            <a href="#">隐私政策</a>
+        </div>
+        <div class="contact-info">
+            <p>Three Core Pty Ltd | 建筑专家</p>
+            <p>地址: South Yarra, Melbourne, VIC | 电话: (03) XXXX XXXX</p>
+            <p>版权所有 &copy; <span id="year"></span> Three Core Pty Ltd. 保留所有权利。</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 平滑滚动效果
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // 自动更新版权年份
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
