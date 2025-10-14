@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Three Core Construction</title>
+  <meta name="description" content="Melbourne-based construction company providing engineering estimation, site construction and project coordination.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Three Core Construction logo" onerror="this.src='assets/logo.svg'">
+        <div class="brand">THREE<span>CORE</span> CONSTRUCTION</div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container grid">
+      <div>
+        <h1>We Build.<br>We Deliver.<br>We Care.</h1>
+        <p>Quality construction with precision, transparency and integrity—serving residential and commercial projects across Melbourne.</p>
+        <a class="btn" href="mailto:info@threecore.com.au?subject=Project%20Enquiry%20-%20Three%20Core%20Construction&body=Hi%20Three%20Core%20Construction%2C%0D%0A%0D%0AMy%20name%20is%3A%20%0D%0AProject%20type%3A%20(Residential%2FCommercial)%0D%0ABrief%20description%3A%20%0D%0ALocation%3A%20%0D%0ABudget%20range%3A%20%0D%0ATimeline%3A%20%0D%0A%0D%0AThanks!">GET IN TOUCH</a>
+        <a class="btn ghost" href="#services" style="margin-left:10px">Our Services</a>
+      </div>
+      <div></div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p class="lead">At <strong>Three Core Construction</strong>, we are a Melbourne-based construction company committed to delivering precision, reliability, and quality across every project. Our team combines years of professional experience in site construction, project management, and engineering estimation, providing clients with tailored solutions that meet both technical and budgetary goals. We build with precision and deliver with integrity — every time.</p>
+    </div>
+  </section>
+
+  <section id="services" class="section section-muted">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p class="lead">We offer a complete range of construction solutions — from project estimation to on-site delivery. Every service is driven by precision, efficiency, and integrity, ensuring results that stand the test of time.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Engineering Estimation</h3>
+          <p>Accurate, competitive quotations based on real-time market data and scope. Gain clarity on cost and timeline before construction begins.</p>
+        </div>
+        <div class="card">
+          <h3>Site Construction</h3>
+          <p>Experienced teams delivering safe, high‑quality builds—from groundwork and structural framing to finishing details.</p>
+        </div>
+        <div class="card">
+          <h3>Project Coordination</h3>
+          <p>End‑to‑end coordination with engineers, suppliers and contractors to maintain timelines, quality and cost control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Recent Works</h2>
+      <p class="lead">Building the future, one project at a time.</p>
+      <div class="gallery">
+        <div><span>Residential Site – Glen Waverley</span></div>
+        <div><span>Commercial Fit‑Out – Box Hill</span></div>
+        <div><span>Concrete Foundation – Doncaster</span></div>
+        <div><span>Framing & Structure – Hawthorn</span></div>
+        <div><span>Interior Finishing – CBD</span></div>
+        <div><span>Ceiling Works – Richmond</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <h2 style="color:#fff;margin-top:0">Contact</h2>
+      <p class="small">Your Project, Our Commitment.</p>
+      <p>
+        <strong>Phone:</strong> <a href="tel:+61421939902">0421 939 902</a><br>
+        <strong>Email:</strong> <a href="mailto:info@threecore.com.au">info@threecore.com.au</a><br>
+        <strong>Office Hours:</strong> Mon–Fri, 9:00am – 5:00pm
+      </p>
+      <p class="small">© <span id="year"></span> Three Core Construction. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
